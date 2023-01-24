@@ -13,6 +13,7 @@ plugins:
     opt:
       - paths=source_relative
       - generate_unbound_methods=true
+      - allow_delete_body=true
 
   - name: validate
     out: .
