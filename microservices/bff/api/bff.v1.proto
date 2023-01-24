@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+option go_package = "./;rpc";
+package bff.v1;
+
+service Plant {
+    rpc Sample(SampleRequest) returns (SampleResponse) {
+        option(google.api.http) = {
+            get: "/v1/message"
+        };
+    }
+}
+
+message SampleRequest {
+    string message = 1;
+}
+
+message SampleResponse {
+    string response_message = 1;
+}
