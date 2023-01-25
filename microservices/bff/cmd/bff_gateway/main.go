@@ -8,6 +8,7 @@ import (
 
 	"github.com/green-finger/microservices/bff/cmd/bff_server/servers"
 	pb "github.com/green-finger/microservices/bff/infrastructure/rpc"
+	"github.com/green-finger/microservices/bff/registry"
 	"github.com/green-finger/microservices/bff/utils/config"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 )
@@ -22,7 +23,7 @@ func run() error {
 
 	plantServer := servers.PlantServer{}
 	plantServerInst = &plantServer
-
+	plantServer.Controller = registry.InitPlant()
 	err := pb.RegisterPlantHandlerServer(ctx, mux, &plantServer)
 	if err != nil {
 		return err

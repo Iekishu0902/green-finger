@@ -3,6 +3,7 @@ module github.com/green-finger/microservices/bff
 go 1.19
 
 require (
+	github.com/google/wire v0.5.0
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.15.0
 	github.com/spf13/viper v1.15.0
 	google.golang.org/genproto v0.0.0-20221227171554-f9683d7f8bef
