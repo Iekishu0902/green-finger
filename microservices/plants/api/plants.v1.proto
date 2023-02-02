@@ -1,0 +1,22 @@
+syntax = "proto3";
+import "core.v1.proto";
+import "google/api/annotations.proto";
+option go_package = "./;rpc";
+
+package plants.v1;
+
+service Plant {
+    rpc GetPlant(GetPlantRequest) returns (GetPlantResponse) {
+        option(google.api.http) = {
+            get: "/v1/plants/{plants_id}"
+        };
+    }
+}
+
+message GetPlantRequest {
+    string plants_id = 1;
+}
+
+message GetPlantResponse {
+    core.v1.Plant plants = 1;
+}
