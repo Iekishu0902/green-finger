@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "google/api/annotations.proto";
+
+option go_package = "./;rpc";
+package core.v1;
+
+message Plant{
+    // PLANT_ID
+    string plants_id = 1;
+    // PLANT_NAME
+    string plants_name = 2;
+    // PLANT_DETAIL
+    string plants_detail = 3;
+    // PLANT_CATEGORY_ID
+    string plants_category_id = 4; 
+    // SEASON_ID
+    string season_id = 5;
+}

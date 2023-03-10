@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  plants-local-mysql:
+    image: mysql:8.0.21
+    ports:
+      - 5432:5432
+    volumes:
+      - plants-local-mysql-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_TCP_PORT=5432
+      - MYSQL_DATABASE=plants
+      - BIND-ADDRESS=0.0.0.0
+volumes:
+  plants-local-mysql-data:
